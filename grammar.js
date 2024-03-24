@@ -2,27 +2,48 @@ module.exports = grammar({
     name: 'MEDFORD',
   
     rules: {
-      // TODO: add the actual grammar rules
-      medford_file: $ => repeat($._definition),
-
-      _definition: $ => choice(
-        $.clause_definition,
+      source_file: $ => repeat($._definition),
+      
+      definition: $ => choice(
         $.comment_definition,
-        // TODO: other kinds of @@, Macros, 
-      ),
-      clause_definition: $ => seq(
-         '@',
-        $.major_tag,
-        $.parameter_list,
-        $._type,
-        $.block
+        $.Metadata_Content_definition,
+        $.Macro_definition,
+        // TODO: other kinds of definitions
       ),
       comment_definition: $ => seq(
         '#',
-       $.comment
+        $.comment_content_definition
       ),
-      identifier: $ => /[A-z]+/,
-
-      number: $ => /\d+/
+      metadata_content_definition: $ => seq(
+        '@',
+        $.major_token_definition,
+        choice(
+          choice(
+            $.data_defintion,
+            $.placeholder
+          ),
+          $.minor_token_definition
+        )
+      ),
+      Macro_definition: $ => seq(
+        "'@",
+        $.macro_identifier_definition,
+        choice(
+          $.data_defintion,
+          $.placeholder
+        )
+      ),
+      minor_token_definition: $ => seq(
+        '-',
+        $.minor_token_definition,
+        repeat(' '),
+        choice(
+          $.data_defintion,
+          $.placeholder
+        )
+      ),
+      major_token_definition: $ => /[a-Z]/,
+      data_defintion: $ => /[a-Z]/,
+      placeholder: $ => /\[..\]/
     }
   });
