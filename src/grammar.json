@@ -2,8 +2,188 @@
   "name": "MEDFORD",
   "rules": {
     "source_file": {
-      "type": "STRING",
-      "value": "hello"
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "definition"
+      }
+    },
+    "definition": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "Comment_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "MetadataContentDefinition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "Macro_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "Continuation_line_definition"
+        }
+      ]
+    },
+    "Comment_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment_content_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "endOfLine"
+        }
+      ]
+    },
+    "MetadataContentDefinition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "@"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "major_token_identification"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "data_definition"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "placeholder"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "minor_token_definition"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "endOfLine"
+        }
+      ]
+    },
+    "Macro_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "'@"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "macro_identification"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "data_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "placeholder"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "endOfLine"
+        }
+      ]
+    },
+    "Continuation_line_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "data_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "endOfLine"
+        }
+      ]
+    },
+    "minor_token_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "minor_token_definition"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "STRING",
+            "value": " "
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "data_definition"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "placeholder"
+            }
+          ]
+        }
+      ]
+    },
+    "major_token_identification": {
+      "type": "PATTERN",
+      "value": "[^\\S]+"
+    },
+    "macro_identification": {
+      "type": "PATTERN",
+      "value": "[^\\S]+"
+    },
+    "data_definition": {
+      "type": "PATTERN",
+      "value": "[^@'#][^\\n]+"
+    },
+    "comment_content_definition": {
+      "type": "PATTERN",
+      "value": "[^\\n]+"
+    },
+    "placeholder": {
+      "type": "PATTERN",
+      "value": "\\[..\\]"
+    },
+    "endOfLine": {
+      "type": "PATTERN",
+      "value": "\\n"
     }
   },
   "extras": [

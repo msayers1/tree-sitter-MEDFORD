@@ -3,7 +3,9 @@
 #Annotation by Megan Gelement 08/17/21
 #Updated to 1.0 by Polina Shpilker 06/14/22
 
-@Paper_Primary Lipopolysaccharide treatment stimulates Pocillopora coral genotype-specific immune responses but does not alter coral-associated bacteria communities
+@Paper_Primary Lipopolysaccharide treatment 
+stimulates Pocillopora coral 
+genotype-specific immune responses but does not alter coral-associated bacteria communities
 @Paper_Primary-Link https://doi.org/10.1016/j.dci.2020.103717
 
 @Journal Developmental & Comparative Immunology 
@@ -41,8 +43,8 @@
 @Contributor-Association Department of Marine Biology and Ecology, Rosenstiel School of Marine and Atmospheric Science, University of Miami, Miami, FL, 33145, USA
 @Contributor-Role Last Author
 
-@Contributor R. Tan
-@Contributor-Note Field Assistance and Site Environmental Data Collection
+'@Contributor R. Tan
+'@Contributor-Note Field Assistance and Site Environmental Data Collection
 
 @Contributor A. Mayfield
 @Contributor-Note Laboratory space

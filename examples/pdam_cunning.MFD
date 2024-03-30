@@ -1,0 +1,136 @@
+@MEDFORD description
+@MEDFORD-Version 1.0
+
+@Paper_Primary Comparative analysis of the Pocillopora damicornis genome highlights role of immune system in coral evolution
+@Paper_Primary-Link https://www.nature.com/articles/s41598-018-34459-8
+
+@Journal Nature Scientific Reports 
+@Journal-Volume 8
+@Journal-Issue 1
+@Journal-Pages 1-10
+
+@Date 2018-05-09
+# @Date 2018-05-09 00:00:00
+# TODO : Catch typos! This was written 'Data'!
+@Date-Note Received
+
+@Date 2018-10-19 00:00:00
+@Date-Note Accepted
+
+@Date 2018-10-31 00:00:00
+@Date-Note Published
+
+# Catch stray fields 
+
+#Contributors will be names, they can have subtypes of association, role, contact, etc.
+@Contributor Ross Cunning 
+@Contributor-Association Department of Marine Biology and Ecology, University of Miami Rosenstiel School of Marine and Atmospheric Science, Miami, FL, USA; Daniel P. Haerther Center for Conservation and Research, John G. Shedd Aquarium, Chicago, IL, USA. 
+@Contributor-Role First Author
+@Contributor-Role Corresponding Author
+@Contributor-Email ross.cunning@gmail.com 
+
+@Contributor R.A. Bay
+@Contributor-Association Department of Evolution and Ecology, University of California Davis, Davis, CA, USA. 
+@Contributor-Role Author
+
+@Contributor P. Gillette
+@Contributor-Association Department of Marine Biology and Ecology, University of Miami Rosenstiel School of Marine and Atmospheric Science, Miami, FL, USA
+@Contributor-Role Author
+
+@Contributor Andrew C. Baker 
+@Contributor-Association Department of Marine Biology and Ecology, University of Miami Rosenstiel School of Marine and Atmospheric Science, Miami, FL, USA
+@Contributor-Role Author
+
+@Contributor N. Traylor-Knowles 
+@Contributor-Association Department of Marine Biology and Ecology, University of Miami Rosenstiel School of Marine and Atmospheric Science, Miami, FL, USA
+@Contributor-Role Last Author, Corresponding Author
+@Contributor-Email ntraylorknowles@rsmas.miami.edu
+
+@Contributor P.W. Glynn
+# Changed Type to Note, as Type seemeded like the wrong field.
+#@Contributor-Type Field collection 
+@Contributor-Note Field collection 
+
+#Funding 
+@Funding National Science Foundation
+@Funding-ID OCE-1358699
+
+#Keywords are one to several words. Any notes under them will be parsed and relevant keywords will be entered
+@Keyword Coral 
+@Keyword genome
+@Keyword Immune system
+@Keyword Evolution
+
+
+@Species Pocillopora damicornis 
+@Species-Loc Sabago Isthmus, Panama
+@Species-ReefCollection March 2005
+@Species-Cultured University of Miami Coral Resource Facility 
+@Species-CultureCollection Sept. 2016
+# Changed from Notes to Note; add edge case test to catch this?
+@Species-Note study used two healthy fragments and two bleached fragments 
+
+@Method Qiagen DNAeasy Midi kit 
+@Method-Type DNA extraction 
+
+@Method Illumina HiSeqX
+@Method-Type Sequencing
+# Make another token type called 'Company' with desc (name), Location, etc?
+@Method-Company Dovetail Genomics, Santa Cruz, CA, USA
+# WTF is this?
+@Method-Sample Bleached
+@Method-Note Shotgun libraries for de novo assemblies, more sensitive to contamination
+
+@Method Illumina HiSeq2500
+@Method-Type Sequencing
+@Method-Company Dovetail Genomics, Santa Cruz, CA, USA
+@Method-Sample Healthy
+@Method-Note Chicago libraries, more sensitive to DNA size 
+
+@Code_Ref HiRise 
+@Code_Ref-Type Assembly of genome scaffolds 
+
+@Code_Ref BLAST
+@Code_Ref-Type Identify and remove scaffolds of non-coral origin 
+@Code_Ref-Note Searched against databases from Symbiodiniaceae, Bacteria, and viruses 
+
+@Code_Ref BUSCO 
+@Code_Ref-Type Completeness analysis 
+@Code_Ref-Note Search for 978 universal metazoan single-copy orthologs 
+
+@Code_Ref Augustus
+@Code_Ref-Type ab initio gene predictor 
+
+@Code_Ref SNAP
+@Code_Ref-Type ab initio gene predictor 
+
+@Code_Ref MAKER
+@Code_Ref-Type Annotate gene models
+@Code_Ref-Note Using gene predictor results (Augustus and SNAP); run iteratively 
+@Code_Ref-Note Supporting evidence from two RNA-seq datasets from P. damicornis, one from S. pistillata, and protein sequences from 20 coral species 
+
+@Code_Ref BLAST 
+@Code_Ref-Type Add putative functional annotations 
+@Code_Ref-Note Homologous protein search in UniProt Swiss-Prot database 
+
+@Code_Ref InterProScan
+@Code_Ref-Type Add putative functional annotations 
+@Code_Ref-Note Protein domain search 
+
+@Code_Ref Genome Annotation Generator 
+@Code_Ref-Type Genome annotation summary statistics 
+@Code_Ref-Note Related to NCBI
+
+@Code_Ref InterProScan 
+@Code_Ref-Type Assign GO terms to protein sequences 
+
+#@Data_Ref P. damicornis annotation github repository 
+#@Data_Ref-URI https://github.com/jrcunning/pdam-genome 
+#@Data_Ref-Type Github
+
+#@Data_Ref Reef Genomics Pocillopora damicornis 
+#@Data_Ref-URI http://pdam.reefgenomics.org 
+#@Data_Ref-Type Website 
+
+#@Data_Ref NCBI Pocillopora damicornis 
+#@Data_Ref-Type Database

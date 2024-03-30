@@ -1,0 +1,10 @@
+(source_file [0, 0] - [2, 0]
+  (definition [0, 0] - [1, 0]
+    (Comment_definition [0, 0] - [1, 0]
+      (comment_content_definition [0, 1] - [0, 39])
+      (endOfLine [0, 39] - [1, 0])))
+  (definition [1, 0] - [2, 0]
+    (MetadataContentDefinition [1, 0] - [2, 0]
+      (major_token_identification [1, 1] - [1, 8])
+      (data_definition [1, 8] - [1, 43])
+      (endOfLine [1, 43] - [2, 0]))))

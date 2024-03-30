@@ -1,11 +1,209 @@
 [
   {
-    "type": "source_file",
+    "type": "Comment_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment_content_definition",
+          "named": true
+        },
+        {
+          "type": "endOfLine",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "Continuation_line_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "data_definition",
+          "named": true
+        },
+        {
+          "type": "endOfLine",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "Macro_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "data_definition",
+          "named": true
+        },
+        {
+          "type": "endOfLine",
+          "named": true
+        },
+        {
+          "type": "macro_identification",
+          "named": true
+        },
+        {
+          "type": "placeholder",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "MetadataContentDefinition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "data_definition",
+          "named": true
+        },
+        {
+          "type": "endOfLine",
+          "named": true
+        },
+        {
+          "type": "major_token_identification",
+          "named": true
+        },
+        {
+          "type": "minor_token_definition",
+          "named": true
+        },
+        {
+          "type": "placeholder",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "Comment_definition",
+          "named": true
+        },
+        {
+          "type": "Continuation_line_definition",
+          "named": true
+        },
+        {
+          "type": "Macro_definition",
+          "named": true
+        },
+        {
+          "type": "MetadataContentDefinition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro_identification",
     "named": true,
     "fields": {}
   },
   {
-    "type": "hello",
+    "type": "major_token_identification",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "minor_token_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "data_definition",
+          "named": true
+        },
+        {
+          "type": "minor_token_definition",
+          "named": true
+        },
+        {
+          "type": "placeholder",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": " ",
     "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "'@",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "comment_content_definition",
+    "named": true
+  },
+  {
+    "type": "data_definition",
+    "named": true
+  },
+  {
+    "type": "endOfLine",
+    "named": true
+  },
+  {
+    "type": "placeholder",
+    "named": true
   }
 ]
