@@ -60,4 +60,4 @@
       (major_token_identification [16, 1] - [16, 20])
       (data_definition [16, 20] - [16, 26])
       (endOfLine [16, 26] - [16, 26]))))
-./examples/made_up_BCODMO.MFD	0 ms	(MISSING endOfLine [16, 26] - [16, 26])
+./examples/made_up_BCODMO.MFD	2 ms	(MISSING endOfLine [16, 26] - [16, 26])

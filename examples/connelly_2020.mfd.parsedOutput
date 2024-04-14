@@ -885,4 +885,4 @@
       (major_token_identification [231, 1] - [231, 18])
       (data_definition [231, 18] - [231, 53])
       (endOfLine [231, 53] - [231, 53]))))
-./examples/connelly_2020.mfd	0 ms	(MISSING endOfLine [231, 53] - [231, 53])
+./examples/connelly_2020.mfd	2 ms	(MISSING endOfLine [231, 53] - [231, 53])

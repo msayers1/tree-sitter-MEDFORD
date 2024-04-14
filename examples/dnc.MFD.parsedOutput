@@ -59,4 +59,4 @@
       (major_token_identification [16, 1] - [16, 14])
       (data_definition [16, 14] - [16, 28])
       (endOfLine [16, 28] - [16, 28]))))
-./examples/dnc.MFD	0 ms	(MISSING endOfLine [16, 28] - [16, 28])
+./examples/dnc.MFD	2 ms	(MISSING endOfLine [16, 28] - [16, 28])

@@ -207,4 +207,4 @@
       (major_token_identification [57, 1] - [57, 14])
       (data_definition [57, 14] - [57, 51])
       (endOfLine [57, 51] - [57, 51]))))
-./examples/Shpilker_2021.mfd	0 ms	(MISSING endOfLine [57, 51] - [57, 51])
+./examples/Shpilker_2021.mfd	2 ms	(MISSING endOfLine [57, 51] - [57, 51])

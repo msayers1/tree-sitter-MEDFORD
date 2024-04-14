@@ -110,4 +110,4 @@
       (major_token_identification [32, 1] - [32, 17])
       (data_definition [32, 17] - [32, 39])
       (endOfLine [32, 39] - [32, 39]))))
-./examples/made_up_Freeform.MFD	0 ms	(MISSING endOfLine [32, 39] - [32, 39])
+./examples/made_up_Freeform.MFD	2 ms	(MISSING endOfLine [32, 39] - [32, 39])

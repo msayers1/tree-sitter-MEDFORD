@@ -66,4 +66,4 @@
       (major_token_identification [19, 1] - [19, 12])
       (data_definition [19, 12] - [19, 40])
       (endOfLine [19, 40] - [19, 40]))))
-./examples/all_syntax_errs.MFD	0 ms	(MISSING endOfLine [19, 40] - [19, 40])
+./examples/all_syntax_errs.MFD	2 ms	(MISSING endOfLine [19, 40] - [19, 40])
