@@ -1,7 +1,7 @@
 from tree_sitter import Language, Parser
 
 # Path to the .so file for the Medford grammar
-MEDFORD_SO_PATH = './src/parser.so'
+MEDFORD_SO_PATH = './bindings/python/medfordparser.so'
 
 medford_lang = Language(MEDFORD_SO_PATH, 'MEDFORD')
 parser = Parser()

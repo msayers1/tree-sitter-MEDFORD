@@ -234,5 +234,16 @@ genotype-specific immune responses but does not alter coral-associated bacteria 
 @Data_Ref-URI https://ars.els-cdn.com/content/image/1-s2.0-S0145305X20300094-mmc4.xlsx
 @Data_Ref-Filename 1-s2.0-S0145305X20300094-mmc4.xlsx
 """
+
+def printASTNodeInfo(rootNode):
+    for child in rootNode.children:
+        print(f' - Child node type: ${child.type=}\n')
+        if len(child.children) > 0:
+            printASTNodeInfo(child)
+        else:
+            if (child.text):
+                print(f'    - Text content:{child.text=}\n')
+                
 tree = medford_parser.parse_code(code)
 print(tree.root_node.sexp())
+printASTNodeInfo(tree.root_node)
