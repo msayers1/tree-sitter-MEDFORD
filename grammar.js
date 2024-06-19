@@ -16,29 +16,25 @@ module.exports = grammar({
         $.Comment_definition,
         $.MetadataContentDefinition,
         $.Macro_definition,        
-        $.Continuation_line_definition
+        $.Continuation_line_definition,
+        $.EmptyLine
         // TODO: other kinds of definitions
       ),
       //Line which will not be processed. 
       Comment_definition: $ => seq(
         "#",
-        $.comment_content_definition,
-        $.endOfLine
+        $.comment_content_definition
       ),
       // Content of the file, which starts with the @.
       // A major token is defined, then either data,
       // a minor token definition or a placeholder. 
       MetadataContentDefinition: $ => seq(
         "@",
-        $.major_token_identification,
+        $.token_identification,
         choice(
-          choice(
-            $.data_definition,
-            $.placeholder
-          ),
-          $.minor_token_definition
-        ),
-        $.endOfLine
+          $.data_definition,
+          $.placeholder
+        )
       ),
       //Macro Definition. 
       Macro_definition: $ => seq(
@@ -47,37 +43,46 @@ module.exports = grammar({
         choice(
           $.data_definition,
           $.placeholder
-        ),
-        $.endOfLine
+        )
       ),
-      //Lines which continue the previous line. 
-      Continuation_line_definition: $ => seq(
-        $.data_definition,
-        $.endOfLine
-      ),
-      // Definition of the minor token branch of the grammar. 
-      minor_token_definition: $ => seq(
-        "-",
-        $.minor_token_definition,
-        repeat(" "),
+      // // Definition of the minor token branch of the grammar. 
+      // minor_token_definition: $ => seq(
+      //   "-",
+      //   $.minor_token_identification,
+      //   repeat(" "),
+      //   choice(
+      //     $.data_definition,
+      //     $.placeholder
+      //   )
+      // ),
+      // Choice between Major-Minor or Major 
+      token_identification: $ => seq(
         choice(
-          $.data_definition,
-          $.placeholder
+          seq(
+            $.major_token_identification,
+            "-",
+            $.minor_token_identification
+          ),
+          $.major_token_identification
         )
       ),
       // Identified by not whitespace. 
-      major_token_identification: $ => /[^\S]+/,
+      major_token_identification: $ => /[^-\S]+/,
+      // Identified by not whitespace. 
+      minor_token_identification: $ => /[^\S]+/,
       // Identified by not whitespace. 
       macro_identification: $ => /[^\S]+/,
       // Identified by not starting with an @ or ' or #, and then continues till \n is encountered. 
-      data_definition: $ => /[^@'#][^\n]+/,
+      Continuation_line_definition: $ => /[^@'#][^\n]+\n/,
+      // Identified by space then the data. 
+      data_definition: $ => / [^\n]+\n/,
+      
       // Continues till \n is encountered. 
       // This needs to be different than data definition
       // or you may encounter a #@ and get an error. 
-      comment_content_definition:$ => /[^\n]+/,
+      comment_content_definition:$ => /[^\n]+\n/,
       // Place Holder [..] special token.
-      placeholder: $ => /\[..\]/,
-      // End of line. 
-      endOfLine:$ => /\n/
+      placeholder: $ => /\[..\]\n/,
+      EmptyLine: $ => /\n/
     }
   });
