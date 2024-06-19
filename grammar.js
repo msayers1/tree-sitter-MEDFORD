@@ -4,7 +4,7 @@ module.exports = grammar({
     //Rules to parse by. 
     rules: {
       //File defintion or Root of the parse. 
-      source_file: $ => repeat($.definition),
+      source_file: $ => repeat($._definition),
       //Definition is each line and currently between
       // Comment - A line that will not be processed.
       // MetadataContentDefinition - Content line. 
@@ -12,12 +12,12 @@ module.exports = grammar({
       // Continuation line - a line with out a @,'@, or #.
       // It is worth noting that Empty Lines are pretty much
       // ignored. 
-      definition: $ => choice(
+      _definition: $ => choice(
         $.Comment_definition,
         $.MetadataContentDefinition,
         $.Macro_definition,        
         $.Continuation_line_definition,
-        $.EmptyLine
+        $._EmptyLine
         // TODO: other kinds of definitions
       ),
       //Line which will not be processed. 
@@ -30,7 +30,7 @@ module.exports = grammar({
       // a minor token definition or a placeholder. 
       MetadataContentDefinition: $ => seq(
         "@",
-        $.token_identification,
+        $._token_identification,
         choice(
           $.data_definition,
           $.placeholder
@@ -56,7 +56,7 @@ module.exports = grammar({
       //   )
       // ),
       // Choice between Major-Minor or Major 
-      token_identification: $ => seq(
+      _token_identification: $ => seq(
         choice(
           seq(
             $.major_token_identification,
@@ -83,6 +83,6 @@ module.exports = grammar({
       comment_content_definition:$ => /[^\n]+\n/,
       // Place Holder [..] special token.
       placeholder: $ => /\[..\]\n/,
-      EmptyLine: $ => /\n/
+      _EmptyLine: $ => /\n/
     }
   });
